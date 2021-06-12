@@ -228,5 +228,7 @@ def m(n):
 """for i in range(1, max-1):
     print(i, a(i), sep =": ")"""
 print("Kiírja egy 6*n-es járda 2*1-es dominókkal történő lekövezési lehetőségeinek számát.")
-q = int(input("(n<300):n="))
+q = 300
+while q >=298:
+    q = int(input("(n<=298):n="))
 print(a(q))
