@@ -1,1 +1,1 @@
-print("Szervusz, Vil†g!")
+print("Szervusz, Vil√°g!")
