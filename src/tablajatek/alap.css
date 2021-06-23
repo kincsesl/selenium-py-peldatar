@@ -1,0 +1,22 @@
+﻿body {
+	background-color:gray;
+	margin:140px;
+}
+
+div.fokeret {
+	background-color:orange;
+	padding:20px;
+	color:black;
+	border: 2px solid red;
+  	border-radius: 25px;
+  	font-family:"Times New Roman", Times, serif;
+}
+
+td {
+	text-align:center;
+	vertical-align:middle;
+}
+
+td.nagy {
+	vertical-align:top;
+}

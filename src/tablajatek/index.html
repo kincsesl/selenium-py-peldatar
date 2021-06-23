@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="alap.css" />
+<script language="javascript">
+var t = new Array(),
+	jatekos = 1,
+	elsokatt = 1;
+	oszlop = 0;
+	
+function valtas(i) {
+	document.getElementById("b1").disabled = "disabled";			
+	if(i == 1) {
+		jatekos++;
+	} else {
+		jatekos--;		
+	}
+	kiszinez(jatekos);
+	elsokatt = 1;
+	oszlop = 0;
+}
+
+function kiszinez(i) {
+	if(i==1) {
+		document.getElementById('j1').innerHTML = '<h1 style = "color:green;">1. játékos</h1>';
+		document.getElementById('j2').innerHTML = '<h1 style = "color:gray;">2. játékos</h1>';
+	} else {
+		document.getElementById('j1').innerHTML = '<h1 style = "color:gray;">1. játékos</h1>';
+		document.getElementById('j2').innerHTML = '<h1 style = "color:green;">2. játékos</h1>';
+	}
+}
+
+function init() {
+var i, j;
+	for(i=1;i<=66;i++) {
+		t[i] = 0;
+	}	
+	for(i=11;i<=13;i++) {
+		t[i] = 1;
+	}	
+	for(i=21;i<=25;i++) {
+		t[i] = 1;
+	}
+	for(i=31;i<=36;i++) {
+		t[i] = 1;
+	}
+	for(i=61;i<=63;i++) {
+		t[i] = 1;
+	}	
+	for(i=51;i<=55;i++) {
+		t[i] = 1;
+	}
+	for(i=41;i<=46;i++) {
+		t[i] = 1;
+	}
+}
+
+function kinyom(a) {
+var osszeg = 0,
+	nyeroszoveg ="";
+	a = parseInt(a);
+	for(i=11;i<=66;i++) {
+		osszeg += t[i];
+	}
+	if(osszeg == 2) {
+		t[a] = 0;
+		document.getElementById(a).innerHTML = '<img alt="" src="golyo-.png" />';
+		nyeroszoveg = " győzött!"
+		if(jatekos == 1) {
+			nyeroszoveg = "Az 1. játékos" + nyeroszoveg;
+		} else {
+			nyeroszoveg = "A 2. játékos" + nyeroszoveg;		
+		}
+		alert(nyeroszoveg);
+		location.reload();					
+	} else {
+		if(t[a] != 0) {			
+			if(elsokatt == 1) {
+				elsokatt = 0;
+				oszlop = Math.trunc(a/10);
+				document.getElementById("b1").disabled = "";				
+				t[a] = 0;
+				document.getElementById(a).innerHTML = '<img alt="" src="golyo-.png" />';
+			} else {
+				if(oszlop != Math.trunc(a/10)){
+					alert("Csak ugyanabból az oszlopból jelölhetsz ki golyót!");
+				} else {
+					t[a] = 0;
+					document.getElementById(a).innerHTML = '<img alt="" src="golyo-.png" />';
+				}
+			}
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<div class="fokeret">
+<table width="100%">
+<tr>
+<td class="nagy" id="j1">1. játékos</td>
+<td>
+	<table align="center">
+	<tr>
+	<td rowspan="3">&nbsp;</td>
+	<td>&nbsp;</td>
+	<td rowspan="2" id="31" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="41" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td>&nbsp;</td>
+	<td rowspan="3">&nbsp;</td>
+	</tr>
+	<tr>
+	<td rowspan="2" id="21" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="51" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	</tr>
+	
+	<tr>
+	<td rowspan="2" id="32" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="42" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	</tr>
+	
+	<tr>
+	<td rowspan="2" id="11" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="22" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="52" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="61" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	</tr>
+	
+	<tr>
+	<td rowspan="2" id="33" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="43" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	</tr>
+	
+	<tr>
+	<td rowspan="2" id="12" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="23" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="53" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="62" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	
+	</tr>
+	
+	<tr>
+	<td rowspan="2" id="34" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="44" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	</tr>
+	
+	<tr>
+	<td rowspan="2" id="13" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="24" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="54" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="63" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	</tr>
+	
+	<tr>
+	<td rowspan="2" id="35" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="45" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	</tr>
+	
+	<tr>
+	<td rowspan="3">&nbsp;</td>
+	<td rowspan="2" id="25" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="55" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="3">&nbsp;</td>
+	</tr>
+	<tr>
+	<td rowspan="2" id="36" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	<td rowspan="2" id="46" onclick="kinyom(this.id)"><img alt="" src="golyo.png" /></td>
+	</tr>
+	
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	
+	</table>
+</td>
+<td class="nagy" id="j2">2. játékos</td>
+</tr>
+<tr><td colspan="3" ><button id ="b1" disabled="disabled" onclick="valtas(jatekos)">Kész!</button></td></tr>
+</table>
+</div>
+<script>
+init();
+kiszinez(1);
+</script>
+</body>
+
+</html>
