@@ -10,5 +10,5 @@ try:
     q = driver.find_element_by_id(melyikid)
     q.click()
 except:
-    print("Nincs meg a kívánt elem: "+melyikid)
+    print("Nincs meg a kívánt elem: " + melyikid)
     driver.close()
