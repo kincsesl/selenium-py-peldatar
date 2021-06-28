@@ -5,8 +5,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 def idő(indul, érkezik):
-    def idővé(óra_perc): #A megadott kételemű tömböt (óra, perc) órává alakítja.
+    def idővé(óra_perc):  # A megadott kételemű tömböt (óra, perc) órává alakítja.
         return int(óra_perc[0]) + int(óra_perc[1]) / 60
+
     return idővé(érkezik) - idővé(indul)
 
 
@@ -21,15 +22,15 @@ try:
     driver.get(oldallink)
 
     sorok = driver.find_elements_by_tag_name('tr')
-    del sorok[:2] #Az első két sor táblafej, ezeket törli.
+    del sorok[:2]  # Az első két sor táblafej, ezeket törli.
 
     hány_sor = 0
     állomások = []
 
     for sor in sorok:
         hány_sor += 1
-        cellák = sor.find_elements_by_tag_name('td') #Kikeresi a sorokon belül az oszlopokat.
-        del cellák[4:] #Csak az első négy oszlop játszik.
+        cellák = sor.find_elements_by_tag_name('td')  # Kikeresi a sorokon belül az oszlopokat.
+        del cellák[4:]  # Csak az első négy oszlop játszik.
         adatok_állomás = []
         for cella in cellák:
             adatok_állomás.append(cella.text)
@@ -40,10 +41,10 @@ try:
 
     print("Átlagsebességek")
 
-    for i in range(len(állomások) - 1): #A kiinduló állomástól a végállomás - 1-ig megy.
-        for k in range(i + 1, len(állomások)): #Az adott állomást követő állomásokon megy végig.
+    for i in range(len(állomások) - 1):  # A kiinduló állomástól a végállomás - 1-ig megy.
+        for k in range(i + 1, len(állomások)):  # Az adott állomást követő állomásokon megy végig.
             távolság = int(állomások[k][0]) - int(állomások[i][0])
-            indulás = állomások[i][3].split(":") #Kételemű tömb a 13:13 típusú időadatból.
+            indulás = állomások[i][3].split(":")  # Kételemű tömb a 13:13 típusú időadatból.
             érkezés = állomások[k][2].split(":")
             menetidő = idő(indulás, érkezés)
             átlagsebesség = str(round(távolság / menetidő, 2)) + " km/h"
