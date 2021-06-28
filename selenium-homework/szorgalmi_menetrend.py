@@ -4,8 +4,10 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-def idő(óra_perc):
-    return int(óra_perc[0]) + int(óra_perc[1]) / 60
+def idő(indul, érkezik):
+    def idővé(óra_perc):
+        return int(óra_perc[0]) + int(óra_perc[1]) / 60
+    return idővé(érkezik) - idővé(indul)
 
 
 options = Options()
@@ -43,9 +45,8 @@ for i in range(len(állomások) - 1):
         távolság = int(állomások[k][0]) - int(állomások[i][0])
         indulás = állomások[i][3].split(":")
         érkezés = állomások[k][2].split(":")
-        indulási_idő = idő(indulás)
-        érkezési_idő = idő(érkezés)
-        átlagsebesség = str(round(távolság / (érkezési_idő - indulási_idő), 2)) + " km/h"
+        menetidő = idő(indulás, érkezés)
+        átlagsebesség = str(round(távolság / menetidő, 2)) + " km/h"
         átlagsebesség = átlagsebesség.replace(".", ",")
         print(állomások[i][1], "--", állomások[k][1], átlagsebesség)
 
