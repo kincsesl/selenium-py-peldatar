@@ -1,4 +1,3 @@
-import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
@@ -16,8 +15,8 @@ try:
 
     with open("linkek.txt", "w") as f:
         for sor in sorok:
-            f.write(sor.get_attribute("href")+"\n")
-        
+            f.write(sor.get_attribute("href") + "\n")
+    print(len(sorok))
     driver.close()
 except:
     print("Nem nyílt meg az oldal.")
