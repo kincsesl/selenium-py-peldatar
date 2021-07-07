@@ -1,10 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+#from webdriver_manager.chrome import ChromeDriverManager
 
 options = Options()
 options.headless = True
-driver = webdriver.Chrome(options=options)
 
+driver = webdriver.Chrome(options=options)
 oldallink = "http://localhost:9999/"
 
 try:
@@ -18,4 +19,4 @@ try:
     print(len(sorok))
     driver.close()
 except:
-    print("Nem nyílt meg az oldal:", oldallink)
+    print("Nem nyílt meg az oldal.")
