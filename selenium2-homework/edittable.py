@@ -2,8 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from datetime import datetime, date, time, timezone
 
-mostvan = datetime.now()
-
 options = Options()
 options.headless = True
 driver = webdriver.Chrome(options=options)
