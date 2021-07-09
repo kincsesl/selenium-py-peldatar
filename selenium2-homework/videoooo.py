@@ -6,6 +6,7 @@ from selenium.webdriver.chrome.options import Options
 # options = Options()
 # options.headless = True
 driver = webdriver.Chrome()
+driver2 = webdriver.Chrome()
 
 driver.get("http://localhost:9999/videos.html")
 
@@ -27,6 +28,12 @@ time.sleep(2)
 ketteske.click()
 
 hármaska = driver.find_element_by_xpath("/html/body/iframe")
+"""
+beltartalom = hármaska.get_attribute("src")
+
+print(beltartalom)
+
+"""
 hármaska.click()
 hármaska.send_keys(Keys.SPACE)
 time.sleep(2)
