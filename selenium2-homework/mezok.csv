@@ -1,0 +1,17 @@
+/html/body/div/form/div[2]/div[1]/input;/html/body/div/form/div[2]/div[2];E-Mail Address;;Please enter an e-mail;valami;Please check your E-Mail format;yardy@yarr.com;
+/html/body/div/form/div[3]/div[1]/input;/html/body/div/form/div[3]/div[2];Desired Password;;This field can't be empty;123;Should be between 6 and 20 characters;123456;
+/html/body/div/form/div[4]/div[1]/input;/html/body/div/form/div[4]/div[2];Confirm Password;;This field can't be empty;123;Does not match Desired Password;123456;
+/html/body/div/form/div[5]/div[1]/input;/html/body/div/form/div[5]/div[2];Customer Number;;This field can't be empty;a;Should be a number;5;
+/html/body/div/form/div[6]/div[1]/input;/html/body/div/form/div[6]/div[2];Dealer Number;;This field can't be empty;111;Should be a 4 character number;1111;
+/html/body/div/form/div[7]/div[1]/input;/html/body/div/form/div[7]/div[2];Random Field;twelve;;;;;
+/html/body/div/form/div[8]/div[1]/input;/html/body/div/form/div[8]/div[2];Date Field;;This field can't be empty;123;Must match pattern YYYY-MM-DD;1999-08-13;
+/html/body/div/form/div[9]/div[1]/input;/html/body/div/form/div[9]/div[2];URL Field;;;abc;Please enter a valid URL (starts with http or https);http://dsf.dsf;
+/html/body/div/form/div[10]/div[1]/textarea;/html/body/div/form/div[10]/div[2];Random Textarea;;This field can't be empty;a;;;
+/html/body/div/form/div[11]/div[1]/select;/html/body/div/form/div[11]/div[2];Card Type;;Please select a card type;Visa;;;
+/html/body/div/form/div[12]/div[1]/input;/html/body/div/form/div[12]/div[2];Card Number;;Please enter a credit card number (no spaces);1111111111111111;Please check your credit card nubmer;5248365453125583;;;
+/html/body/div/form/div[13]/div[1]/input;/html/body/div/form/div[13]/div[2];Card CVV (on back or card);;This field can't be empty;300;;;
+/html/body/div/form/div[14]/div[1]/div/div[1]/select;/html/body/div/form/div[14]/div[2];Expiration Month;;Select a month;January;;;
+/html/body/div/form/div[14]/div[2]/div/div[1]/select;/html/body/div/form/div[14]/div[2];Expiration Year;;Select a year;2018;Appears to be expired - please check date;2026;
+/html/body/div/form/div[15]/div[1]/div[1]/input;/html/body/div/form/div[15]/div[2];Just a regular single checkbox;;;;;;
+/html/body/div/form/div[17]/div[1]/div[1]/input;/html/body/div/form/div[17]/div[2];Agree to terms of service?;;;;;;
+/html/body/div/form/div[17]/div[1]/div[3]/input;/html/body/div/form/div[17]/div[2];Agree to more stuff?;;;;;;
