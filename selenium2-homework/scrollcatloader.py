@@ -52,7 +52,7 @@ for i in range(20):
     #id_je = id_k[i].replace("Cat id: ", "")
     if r.status_code == 200:
         with open(fájlnevek[i], "wb") as f:
-            r.raw.decode_content = True
-            shutil.copyfileobj(r.raw, f)
+            f.write(r.content)
+
     i += 1
 driver.close()
