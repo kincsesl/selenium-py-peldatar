@@ -9,6 +9,7 @@ driver = webdriver.Chrome()
 
 driver.get("http://localhost:9999/videos.html")
 
+
 def indítmegállít(v):
     v.click()
     v.send_keys(Keys.SPACE)
@@ -28,16 +29,22 @@ ketteske.click()
 hármaska = driver.find_element_by_id("youtubeframe")
 driver.switch_to.frame(hármaska)
 
-#hármaska.send_keys(Keys.SPACE)
-hármaska.click()
 time.sleep(2)
-hármaska.click()
-#hármaska.send_keys(Keys.SPACE)
-"""
-hármaska.click()
-hármaska.send_keys(Keys.SPACE)
+driver.find_element_by_id("player").click()
+
 time.sleep(2)
-hármaska.send_keys(Keys.SPACE)
-driver.close()
+driver.find_element_by_id("player").click()
 
 """
+#hármaska.send_keys(Keys.SPACE)
+driver.click()
+time.sleep(2)
+driver.click()
+#hármaska.send_keys(Keys.SPACE)
+
+hármaska.click()
+hármaska.send_keys(Keys.SPACE)
+time.sleep(2)
+hármaska.send_keys(Keys.SPACE);
+"""
+driver.close()
